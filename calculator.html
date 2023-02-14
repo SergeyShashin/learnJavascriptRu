@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+</head>
+
+<body>
+  <script>
+    /*
+    Создайте calculator.
+
+    Создайте объект calculator (калькулятор) с тремя методами:
+    read() (читать) запрашивает два значения и сохраняет их как свойства объекта.
+    sum() (суммировать) возвращает сумму сохранённых значений.
+    mul() (умножить) перемножает сохранённые значения и возвращает результат.
+    
+    */
+
+    'use strict';
+
+    const calculator = {
+
+      read() {
+        this.value1 = Number(prompt('Input first value.'));
+        this.value2 = Number(prompt('Input second value.'));
+        ;
+      },
+
+      sum() {
+        return this.value1 + this.value2
+      },
+
+      mul() {
+        return this.value1 * this.value2
+      }
+
+    }
+
+    calculator.read();
+    alert(`Sum of values = ${calculator.sum()}.`);
+    alert(`The result of multiplying the values = ${calculator.mul()}.`);
+
+  </script>
+</body>
+
+</html>
