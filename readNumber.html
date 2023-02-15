@@ -25,8 +25,28 @@
     'use strict';
 
     function readNumber() {
-      
+
+      let inputNumber = null;
+
+      while (true) {
+        inputNumber = Number(prompt('Введите число.'));
+
+        if (isNaN(inputNumber)) {
+          if (!confirm('Для выхода кликните по кнопке "Отмена"')) {
+            return null;
+          }
+          continue;
+        }
+
+        if (typeof inputNumber === 'number') {
+          return inputNumber
+        }
+
+      }
+
     }
+
+    console.log(readNumber());
 
 
   </script>
