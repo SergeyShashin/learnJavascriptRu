@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>filterRange(arr, a, b)</title>
+</head>
+
+<body>
+
+  <script>
+    /*
+    Напишите функцию filterRange(arr, a, b), которая принимает массив arr,
+    ищет элементы со значениями больше или равными a и меньше или равными b и возвращает результат в виде массива.
+    Функция должна возвращать новый массив и не изменять исходный.
+    */
+
+    const arr = [5, 3, 8, 1];
+    const a = 1;
+    const b = 4;
+
+    function filterRange(arr, a, b) {
+      return arr.filter(el => el >= a && el <= b);
+    }
+
+    console.log(`Исходный массив [${arr}].\n\nВыведи больше или равно ${a} и меньше или равно ${b}.\nРезультат [${filterRange(arr, a, b)}].`);
+    console.log(`\nИсходный массив [${arr}].`);
+
+  </script>
+
+</body>
+
+</html>
