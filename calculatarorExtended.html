@@ -33,7 +33,7 @@
       this.b = Number(this.arrFromStr[2]);
       this.operation = this.arrFromStr[1];
 
-      if (!this.methods[this.operation] || isNaN(this.a || isNaN(this.b))) {
+      if (!this.methods[this.operation] || isNaN(this.a) || isNaN(this.b)) {
         return `Ошибка во входных данных. Первое число ${this.a}. Второе число ${this.b}. Операция ${this.methods[this.operation]}.`;
       }
 
