@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shuffle</title>
+</head>
+
+<body>
+  <script>
+    'use strict';
+
+    /*
+    Напишите функцию shuffle(array), которая перемешивает (переупорядочивает случайным образом) элементы массива.
+    Многократные прогоны через shuffle могут привести к разным последовательностям элементов.
+    Все последовательности элементов должны иметь одинаковую вероятность.
+    Например, [1,2,3] может быть переупорядочено как [1,2,3] или [1,3,2], или [3,1,2] и т.д., с равной вероятностью каждого случая.
+    */
+
+    let arr = [1, 2, 3];
+
+    function shuffle(arr) {
+      const idxArr = [];
+      const arrShufle = [];
+
+      while (idxArr.length < arr.length) {
+
+        let randomNumber = Math.floor(Math.random() * arr.length);
+
+        idxArr.includes(randomNumber) ? '' : idxArr.push(randomNumber);
+      }
+
+      idxArr.forEach(el => arrShufle.push(arr[el]));
+
+      return arrShufle;
+
+    }
+
+    console.log(shuffle(arr));
+
+  </script>
+</body>
+
+</html>
