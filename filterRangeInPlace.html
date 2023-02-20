@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>filterRangeInPlaceInPlace(arr, a, b)</title>
+</head>
+
+<body>
+
+  <script>
+    /*
+    Напишите функцию filterRangeInPlace(arr, a, b), которая принимает массив arr,
+    ищет элементы со значениями больше или равными a и меньше или равными b и возвращает результат в виде массива.
+    Функция должна возвращать новый массив и не изменять исходный.
+    */
+
+    const arr = [5, 3, 8, 1];
+    const a = 1;
+    const b = 4;
+
+
+    function filterRangeInPlace(arr, a, b) {
+      arr[0] = arr.filter(el => el >= a && el <= b);
+      arr.length = 1;
+    }
+
+    console.log(filterRangeInPlace(arr, a, b));
+
+    console.log(`Исходный массив [${arr}].`);
+
+  </script>
+
+</body>
+
+</html>
