@@ -21,6 +21,39 @@
     Он принимает оператор name и функцию с двумя аргументами func(a,b), которая описывает его.
     */
 
+    function Calculator() {
+      this.methods = {
+        '+': (a, b) => a + b,
+      }
+    }
+
+    Calculator.prototype.calculate = function (str) {
+      this.arrFromStr = str.split(' ');
+      this.a = Number(this.arrFromStr[0]);
+      this.b = Number(this.arrFromStr[2]);
+      this.operation = this.arrFromStr[1];
+
+      if (!this.methods[this.operation] || isNaN(this.a || isNaN(this.b))) {
+        return `Ошибка во входных данных. Первое число ${this.a}. Второе число ${this.b}. Операция ${this.methods[this.operation]}.`;
+      }
+
+      return this.methods[this.operation](this.a, this.b)
+    }
+
+    Calculator.prototype.addMethods = function (name, func) {
+      this.methods[name] = func;
+    }
+
+    let calc = new Calculator();
+    console.log(calc.calculate('1 + 200'));
+    calc.addMethods('*', (a, b) => a * b);
+    console.log(calc.calculate('3 * 4'));
+    calc.addMethods('/', (a, b) => a / b);
+    console.log(calc.calculate('12 / 4'));
+    calc.addMethods('**', (a, b) => a ** b);
+    console.log(calc.calculate('3 ** 3'));
+
+
   </script>
 </body>
 
