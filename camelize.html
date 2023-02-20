@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Camelize</title>
+</head>
+
+<body>
+  <script>
+    function camelize(str) {
+      let newStr = str[0] === '-' ? str.slice(1) : str;
+      return newStr.split('-').map(el => el[0].toUpperCase() + el.slice(1)).join('');
+    }
+
+    console.log(camelize('my-short-string'));
+    console.log(camelize("background-color"));
+    console.log(camelize("list-style-image"));
+    console.log(camelize("-webkit-transition"));
+  </script>
+</body>
+
+</html>
