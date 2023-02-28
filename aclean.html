@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aclean</title>
+</head>
+
+<body>
+  <script>
+    /*
+      Напишите функцию aclean(arr), которая возвращает массив слов, очищенный от анаграмм.
+    */
+
+    let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+
+    function aclean(arr) {
+      let modifyArr = [];
+      let obj = {};
+      let idxWithUniqueCharachter = [];
+
+      arr.forEach(el => {
+        modifyArr.push(el.toLowerCase().split('').sort().join(''));
+      });
+
+      modifyArr.forEach((el, idx) => {
+        obj[el] = idx;
+      });
+
+      for (let key in obj) {
+        idxWithUniqueCharachter.push(arr[obj[key]]);
+      }
+
+      return idxWithUniqueCharachter;
+    }
+
+    console.log(aclean(arr));
+
+  </script>
+</body>
+
+</html>
